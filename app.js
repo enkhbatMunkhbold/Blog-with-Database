@@ -62,12 +62,13 @@ app.post("/compose", function(req, res) {
     content: req.body.postBody
   });
 
-  post.save(err => {
-    if (!err) {
-      res.redirect("/");
-    }
-  });
-
+  // post.save(err => {
+  //   if (!err) {
+  //     res.redirect("/");
+  //   }
+  // });
+  post.save();
+  res.redirect("/");
 });
 
 app.get("/posts/:postId", function(req, res) {
